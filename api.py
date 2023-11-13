@@ -8,7 +8,7 @@ app = FastAPI()
 
 # load the Tfidf and model
 tfidf = pickle.load(open("tf_idf.pkt", "rb"))
-nb_model = pickle.load(open("toxicity_model.pkt", "rb"))
+nb_model = pickle.load(open("model.pkt", "rb"))
 
 #endpoint
 @app.post("/predict")
@@ -20,7 +20,7 @@ async def predict(text: str):
     prediction = nb_model.predict(text_tfidf)
     
     #map the predicted class to a string
-    class_name = "Toxic" if prediction == 1 else "Non-Toxic"
+    class_name = "Propagandistic" if prediction == 1 else "Non-Propagandistic"
     
     #Return the prediction in a JSON response
     return {
