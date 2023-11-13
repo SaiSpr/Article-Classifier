@@ -17,7 +17,7 @@ def toxicity_prediction(text):
     text_tfidf = tfidf.transform([text]).toarray()
     nb_model = load_model()
     prediction = nb_model.predict(text_tfidf)
-    class_name = "Toxic" if prediction == 1 else "Non-Toxic"
+    class_name = "Propagandistic" if prediction == 1 else "Non-Propagandistic"
     return class_name
 
 st.header("Toxicity Detection App")
