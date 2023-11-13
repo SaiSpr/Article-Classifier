@@ -9,7 +9,7 @@ def load_tfidf():
     return tfidf
 
 def load_model():
-    nb_model = pickle.load(open("toxicity_model.pkt", "rb"))
+    nb_model = pickle.load(open("model.pkt", "rb"))
     return nb_model
 
 def toxicity_prediction(text):
@@ -30,4 +30,4 @@ if text_input is not None:
     if st.button("Analyse"):
         result = toxicity_prediction(text_input)
         st.subheader("Result:")
-        st.info("The result is "+ result + ".")
+        st.info("The article is "+ result + ".")
