@@ -7,8 +7,8 @@ from sklearn.naive_bayes import MultinomialNB
 app = FastAPI()
 
 # load the Tfidf and model
-tfidf = pickle.load(open("tf_idf.pkt", "rb"))
-nb_model = pickle.load(open("model.pkt", "rb"))
+tfidf = pickle.load(open("tf_idf.pkl", "rb"))
+nb_model = pickle.load(open("model.pkl", "rb"))
 
 #endpoint
 @app.post("/predict")
