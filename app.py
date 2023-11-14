@@ -13,7 +13,7 @@ def load_model():
     nb_model = pickle.load(open("model.pkl", "rb"))
     return nb_model
 
-def toxicity_prediction(text):
+def news_prediction(text):
     tfidf = load_tfidf()
     text_tfidf = tfidf.transform([text]).toarray()
     nb_model = load_model()
@@ -30,6 +30,6 @@ text_input = st.text_input("Enter your text")
 
 if text_input is not None:
     if st.button("Analyse"):
-        result = toxicity_prediction(text_input)
+        result = news_prediction(text_input)
         st.subheader("Result:")
         st.info("The article is "+ result + ".")
