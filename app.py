@@ -21,7 +21,7 @@ def toxicity_prediction(text):
     class_name = "Propagandistic" if prediction == 1 else "Non-Propagandistic"
     return class_name
 
-st.title("Toxicity Detection App")
+st.title("Truth Seeker App")
 st.image("1.jpg")
 
 st.subheader("Input your text")
