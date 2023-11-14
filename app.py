@@ -10,7 +10,7 @@ def load_tfidf():
     return tfidf
 
 def load_model():
-    nb_model = pickle.load(open("model.pkt", "rb"))
+    nb_model = pickle.load(open("model.pkl", "rb"))
     return nb_model
 
 def toxicity_prediction(text):
