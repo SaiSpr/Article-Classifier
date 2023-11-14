@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
+
 def load_tfidf():
     tfidf = pickle.load(open("tf_idf.pkt", "rb"))
     return tfidf
@@ -20,7 +21,8 @@ def toxicity_prediction(text):
     class_name = "Propagandistic" if prediction == 1 else "Non-Propagandistic"
     return class_name
 
-st.header("Toxicity Detection App")
+st.title("Toxicity Detection App")
+st.image("1.jpg")
 
 st.subheader("Input your text")
 
