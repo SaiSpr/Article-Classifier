@@ -6,7 +6,7 @@ from sklearn.naive_bayes import MultinomialNB
 
 
 def load_tfidf():
-    tfidf = pickle.load(open("tf_idf.pkt", "rb"))
+    tfidf = pickle.load(open("tf_idf.pkl", "rb"))
     return tfidf
 
 def load_model():
